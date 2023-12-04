@@ -67,14 +67,26 @@ func TestCap(t *testing.T) {
 }
 
 func TestExpansion(t *testing.T) {
-	 slice := []int{1,2}
-	 slice = append(slice,2)
+	slice := []int{1, 2}
+	slice = append(slice, 2)
 	Param(slice)
 	println(slice)
 }
 
 func Param(slice []int) {
 	//*slice = append(*slice,1)
-	slice = append(slice,1)
+	slice = append(slice, 1)
 	slice[0] = 2
+}
+
+func TestAdd(t *testing.T) {
+	nums := make([]int, 0, 20)
+	add(nums)
+	t.Log(nums)
+}
+
+func add(nums []int) {
+	for i := 0; i < 10; i++ {
+		nums = append(nums, i)
+	}
 }

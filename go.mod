@@ -4,7 +4,9 @@ go 1.14
 
 require (
 	github.com/easierway/concurrent_map v0.0.0-20190103024436-7073b0dd7e95
+	github.com/google/wire v0.5.0
 	github.com/gopherjs/gopherjs v0.0.0-20200217142428-fce0ec30dd00 // indirect
+	github.com/json-iterator/go v1.1.12
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/mailru/easyjson v0.7.6
 	github.com/marusama/cyclicbarrier v1.1.0

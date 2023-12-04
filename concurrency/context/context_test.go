@@ -11,24 +11,25 @@ import (
 
 func TestContext(t *testing.T) {
 	cxt, cancel := context.WithCancel(context.Background())
+	cxt = context.WithValue(cxt, "key1", "value1")
+	cxt = context.WithValue(cxt, "key12", "value12")
+	cancel()
 
 	go func() {
 		defer func() {
 			fmt.Println("goroutine exit")
 		}()
-	}()
-
-	for {
 		select {
 		case <-cxt.Done():
+			fmt.Println("ctx done")
 			return
 		default:
 			time.Sleep(time.Second)
 
 		}
-	}
+	}()
+
 	time.Sleep(time.Second)
-	cancel()
 	time.Sleep(2 * time.Second)
 	//context.WithValue(cxt,nil,nil)
 	//context.WithCancel(cxt)

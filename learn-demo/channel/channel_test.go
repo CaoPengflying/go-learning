@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"testing"
+	"time"
 )
 
 func TestChannel(t *testing.T) {
@@ -81,4 +82,44 @@ func TestReceive(t *testing.T) {
 	ch <- 1
 
 	fmt.Println(i)
+}
+
+var c = make(chan int)
+var a string
+
+func f() {
+	a = "hello, world"
+	<-c
+
+}
+
+func Test_a(t *testing.T) {
+	go f()
+	c <- 0
+	print(a)
+}
+
+var a1 = 0
+var b1 = 0
+
+var ch1 = make(chan int)
+
+func fun1() {
+	a1 = 1
+	println("fun1")
+	ch1 <- 0
+	print(b1)
+}
+
+func fun2() {
+	b1 = 1
+	println("fun2")
+	<-ch1
+	print(a1)
+}
+
+func TestFun1(t *testing.T) {
+	go fun2()
+	go fun1()
+	time.Sleep(1 * time.Second)
 }
