@@ -1,7 +1,0 @@
-config:
-  apollo:
-    appId: huiyin
-    cluster: tpf
-    endpoint: http://test-apollo-meta.xesv5.com
-    namespace: application.json #,application
-    backupPath: /Users/tal/Desktop/xes/go-proj/huiyin/configs

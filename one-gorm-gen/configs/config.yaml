@@ -1,7 +1,0 @@
-config:
-  apollo:
-    appId: huiyin
-    cluster: default
-    endpoint: http://test-apollo-meta.xesv5.com
-    namespace: application.json,application
-    backupPath: /home/www/huiyin/configs
