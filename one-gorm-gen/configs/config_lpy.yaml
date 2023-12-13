@@ -1,0 +1,7 @@
+config:
+  apollo:
+    appId: huiyin
+    cluster: lpy
+    endpoint: http://test-apollo-meta.xesv5.com
+    namespace: application.json
+    backupPath: /Users/lipeiyong/go/src/huiyin/configs
